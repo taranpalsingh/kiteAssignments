@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="upper">
+        <div class="btnGroup">
+            <button class="btn" [routerLink]="['/home/fruits']">Fruits</button>
+            <button class="btn" [routerLink]="['/home/vegetables']">Vegetables</button>    
+        </div>
+    </div>
+    <hr>
+    <div class="lower">
+        <fruits *ngIf="isFruits"></fruits>
+        <vegetables *ngIf="isVegetables"></vegetables>
+    </div>
+</div>

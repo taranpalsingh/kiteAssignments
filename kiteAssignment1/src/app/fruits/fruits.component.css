@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+li{
+    background-color: grey;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: auto;
+    margin: 15px;
+    font-size: larger;
+    box-shadow: 1px 2px 2px black;
+}
+
+@media(max-width: 500px){
+    li{
+        padding: 10px;
+        border-radius: 5px;
+        font-size: large;
+    }
+}

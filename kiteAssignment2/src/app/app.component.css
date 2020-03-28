@@ -1,0 +1,15 @@
+.container{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+h1{
+    padding: 5vh;
+}
+
+@media(max-width: 500px){
+    h1{
+        font-size: 1.2em;
+    }
+}

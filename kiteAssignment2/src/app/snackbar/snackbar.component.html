@@ -1,0 +1,25 @@
+<div class="container">
+    <mat-form-field>
+        <mat-label>Snack bar duration (s)</mat-label>
+        <input matInput type="number" 
+            [(ngModel)]="timeDuration">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Snack bar message</mat-label>
+        <input matInput type="text" 
+            [(ngModel)]="message">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Snack bar action</mat-label>
+        <input matInput type="text" 
+            [(ngModel)]="action">
+    </mat-form-field>
+
+    <button mat-stroked-button type="button" 
+        (click)="openSnackbar()"
+        color="primary">
+        Pizza
+    </button>
+</div>

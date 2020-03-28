@@ -1,0 +1,13 @@
+mat-form-field{
+    display: block;
+    margin: 20px auto;
+    width: 40%;
+    min-width: 300px;
+}
+
+.container{
+    margin-top: 10vh;
+    text-align: center;
+}
+
+

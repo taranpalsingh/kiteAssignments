@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="wrapper">
+      
+    <div class="card mat-elevation-z4">
+      <div class="text-center pt-4">
+        <img src="../../../assets/images/brandLogo.png" class="mb-2 brandLogo">
+        <h2>Login</h2>
+      </div>
+
+      <!-- Alert for error message of api -->
+      <div class="alert alert-danger" *ngIf="loginResMessage">
+        {{loginResMessage}}
+      </div>
+
+      <div class="card-body py-4">
+        <div class="col-sm-8 offset-sm-2 text-center my-3 col-md-12 offset-md-0">
+          <form [formGroup]="loginFormGroup" (ngSubmit)="submitForm()">
+            
+            <!-- Username Input -->
+            <div class="form-group">
+              <mat-form-field>
+                <input required matInput type="text" placeholder="Username" formControlName="username">
+                <mat-error *ngIf="username.errors?.required">
+                  Username is required.
+                </mat-error>
+                <mat-error *ngIf="username.errors?.minlength">
+                  Minlength is 5.
+                </mat-error>
+                <mat-error *ngIf="username.errors?.maxlength">
+                  Maxlength is 15.
+                </mat-error>
+                <mat-error *ngIf="username.errors?.otherCases">
+                  Only lowercase alphabets and numbers are allowed.
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group">
+              <mat-form-field>
+                <input required matInput 
+                  [type]="showPassword ? 'text': 'password'" 
+                  placeholder="Password" formControlName="password">
+                <mat-icon matSuffix>
+                  <i class="fa fa-eye" *ngIf="showPassword" (click)="showPassword=!showPassword"></i>
+                  <i class="fa fa-eye-slash" *ngIf="!showPassword" (click)="showPassword=!showPassword"></i>
+                </mat-icon>
+                <mat-hint> *Must contain atleast one lowercase alphabet, one uppercase alphabet, one number and one special character</mat-hint>
+                <mat-error *ngIf="password.errors?.required">
+                  Password is required.
+                </mat-error>
+                <mat-error *ngIf="password.errors?.minlength">
+                  Minlength is 5.
+                </mat-error>
+                <mat-error *ngIf="password.errors?.maxlength">
+                  Maxlength is 15.
+                </mat-error>
+                <mat-error *ngIf="password.errors?.strong">
+                  Must contain atleast one lowercase alphabet, one uppercase alphabet, one number and one special character.
+                </mat-error>
+              </mat-form-field>
+          </div>
+            <div>
+              <button mat-stroked-button type="submit" class="mt-4">Submit</button>
+            </div>
+          </form>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

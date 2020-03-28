@@ -1,0 +1,30 @@
+<div class="container">
+  
+  <!-- List Length Input -->
+  <mat-form-field>
+    <mat-label>List length</mat-label>
+    <input matInput [(ngModel)]="length" 
+      type="number" (change)="updateLength()">
+  </mat-form-field>
+
+  <!-- Page size options Input -->
+  <mat-form-field>
+    <mat-label>Page size options</mat-label>
+    <input matInput [ngModel]="pageSizeOptions" (ngModelChange)="setPageSizeOptions($event)"
+           [ngModelOptions]="{updateOn: 'blur'}" placeholder="Ex. 10,25,50">
+  </mat-form-field>
+  
+  <!-- Data to be displayed -->
+  <ul>
+    <li *ngFor="let number of (numbers | slice: lowValue : highValue)">
+      {{number}} 
+    </li>
+  </ul>
+
+  <!-- Paginator icons of material UI -->
+  <mat-paginator [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="getPaginatorData($event)">
+  </mat-paginator>
+</div>
